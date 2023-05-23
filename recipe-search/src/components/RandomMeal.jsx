@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./components.css"
+import {Link} from "react-router-dom";
 
 const RandomMeal = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -35,16 +36,18 @@ const RandomMeal = () => {
             {isLoading ? (
                 <p>Loading...</p>
             ) : meal ? (
-                <div>
+                <div key={meal.idMeal}>
+                    <Link to={`/recipe/${meal.idMeal}`}>
                     <img src={meal.strMealThumb} alt={meal.strMeal} />
                     <h4>{meal.strMeal}</h4>
                     <p>{meal.strCategory}</p>
+                    </Link>
                 </div>
             ) : (
                 <p>No meal found.</p>
             )}
         </div>
-    );
+    )
 };
 
 export default RandomMeal;
