@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-You can check Demo [here](https://main--celebrated-haupia-db3303.netlify.app)
+You can check Demo [here](https://els-mealdb-react.netlify.app)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
