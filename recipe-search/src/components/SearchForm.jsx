@@ -49,13 +49,15 @@ const SearchForm = () => {
             ) : (
                 <ul>
                     {recipes.map((recipe) => (
-                        <li key={recipe.idMeal}>
+                        <li type="none" key={recipe.idMeal}>
                             <Link to={`/recipe/${recipe.idMeal}`}>
-                                <img src={recipe.strMealThumb} alt={recipe.strMeal} />
-                                <div>
-                                    <h4>{recipe.strMeal}</h4>
-                                    <p>{recipe.strCategory}</p>
-                                </div>
+                            <div className="search-item">
+                                    <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+                                    <div className="search-item_title">
+                                        <h4>{recipe.strMeal}</h4>
+                                        <p>{recipe.strCategory}</p>
+                                    </div>
+                            </div>
                             </Link>
                         </li>
                     ))}
