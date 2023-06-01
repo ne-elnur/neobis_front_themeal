@@ -31,7 +31,7 @@ const RecipeDetails = () => {
         return <p>Loading recipe details...</p>;
     }
 
-    const { strMeal, strCategory, strMealThumb, strInstructions } = recipe;
+    const { strMeal, strCategory, strMealThumb, strInstructions, strArea, strYoutube } = recipe;
 
     const ingredients = [];
     for (let i=1; i<=20; i++) {
@@ -43,24 +43,39 @@ const RecipeDetails = () => {
         }
     }
 
+    const measures = [];
+    for (let i=1; i<=20; i++) {
+        const measureKey = `strMeasure${i}`;
+        if (recipe[measureKey]) {
+            measures.push(recipe[measureKey]);
+        } else {
+            break;
+        }
+    }
+
     return (
-        <div className="details">
-            <img
-                src={strMealThumb}
-                alt={strMeal}
-                className="meal-img"
-            />
-            <div className="details-body">
-                <span className="category">{strCategory}</span>
-                <h3>{strMeal}</h3>
-                <p>Instructions: {strInstructions}</p>
-                <p>Ingredients:</p>
-                <ul>
-                    {ingredients.map((ingredient, index) => (
-                        <li key={index}>{ingredient}</li>
-                    ))}
-                </ul>
+        <div className="meal_details">
+
+            <div className="meal">
+                <div  className="meal_title">
+                    <h3 className="meal_name">{strMeal}</h3>
+                    <p>{strCategory} | {strArea}</p>
+                    <ul className="meal_ingredients">
+                        {ingredients.map((ingredient, index) => (
+                            <li key={index}>
+                                {ingredient}
+                                {measures[index] && ` ${measures[index]}`}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="meal_image-frame">
+                    <img className="meal_image" src={strMealThumb} alt={strMeal}/>
+                </div>
             </div>
+            <h3>Instructions:</h3>
+            <pre>{strInstructions}</pre>
+            <a className="meal_youtube" href={strYoutube}>Watch on YouTube</a>
         </div>
     );
 };

@@ -35,16 +35,15 @@ const RandomMeal = () => {
             {isLoading ? (
                 <p>Loading...</p>
             ) : meal ? (
-                <div className="random-meal" key={meal.idMeal}>
-                    <div className="random-meal_title">
-                        <h3>Meal of the day</h3>
-                        <Link to={`/recipe/${meal.idMeal}`}>
-                            <h4>{meal.strMeal}</h4>
-                        </Link>
-                        <p>{meal.strCategory}</p>
+                <div className="meal" key={meal.idMeal}>
+                    <div className="meal_title">
+                        <h2 className="h2">Meal of the day</h2>
+                        <Link to={`/recipe/${meal.idMeal}`} className="meal_name">{meal.strMeal}</Link>
+                        <p>{meal.strCategory} | {meal.strArea}</p>
                     </div>
-
-                    <img className="random-meal_image" src={meal.strMealThumb} alt={meal.strMeal} />
+                    <div className="meal_image-frame">
+                        <img className="meal_image" src={meal.strMealThumb} alt={meal.strMeal} />
+                    </div>
                 </div>
             ) : (
                 <p>No meal found.</p>
