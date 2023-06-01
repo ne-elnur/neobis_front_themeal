@@ -62,9 +62,9 @@ const RecipeDetails = () => {
                     <p>{strCategory} | {strArea}</p>
                     <ul className="meal_ingredients">
                         {ingredients.map((ingredient, index) => (
-                            <li key={index}>
+                            <li key={index} className="meal_ingredient-item">
                                 {ingredient}
-                                {measures[index] && ` ${measures[index]}`}
+                                {measures[index] && <span className="meal_measure-item"> {measures[index]}</span>}
                             </li>
                         ))}
                     </ul>
@@ -73,7 +73,7 @@ const RecipeDetails = () => {
                     <img className="meal_image" src={strMealThumb} alt={strMeal}/>
                 </div>
             </div>
-            <h3>Instructions:</h3>
+            <h2 className="h2">Instructions</h2>
             <pre>{strInstructions}</pre>
             <a className="meal_youtube" href={strYoutube}>Watch on YouTube</a>
         </div>

@@ -10,7 +10,7 @@ function App() {
         <Router>
             <div>
                 <div className="header">
-                    <h2>The Meal</h2>
+                    <a href="/">The Meal</a>
                 </div>
                 <Routes>
                     <Route path="/" element={<RandomMeal />} />

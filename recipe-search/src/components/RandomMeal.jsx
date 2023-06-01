@@ -37,7 +37,7 @@ const RandomMeal = () => {
             ) : meal ? (
                 <div className="meal" key={meal.idMeal}>
                     <div className="meal_title">
-                        <h2 className="h2">Meal of the day</h2>
+                        <h2 className="h2">Meal of the Day</h2>
                         <Link to={`/recipe/${meal.idMeal}`} className="meal_name">{meal.strMeal}</Link>
                         <p>{meal.strCategory} | {meal.strArea}</p>
                     </div>

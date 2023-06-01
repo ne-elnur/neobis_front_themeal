@@ -57,7 +57,7 @@ const SearchForm = () => {
                                     <img src={recipe.strMealThumb} alt={recipe.strMeal} />
                                     <div className="search-item_title">
                                         <h3>{recipe.strMeal}</h3>
-                                        <p>{recipe.strCategory} | {recipe.strArea}</p>
+                                        <p className="search-item_info">{recipe.strCategory} | {recipe.strArea}</p>
                                     </div>
                             </div>
                             </Link>

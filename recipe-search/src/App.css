@@ -1,19 +1,17 @@
 @font-face {
   font-family: Cardo;
   src: url(fonts/Cardo-Regular.ttf) format("truetype");
-  font-weight: 400;
   font-variant: normal;
 }
 @font-face {
   font-family: Raleway;
-  src: url(fonts/Raleway-Black.ttf) format("truetype");
-  font-weight: 500;
+  src: url(fonts/Raleway-VariableFont_wght.ttf) format("truetype");
   font-variant: normal;
 }
 
 * {
   box-sizing: border-box;
-  font-family: Cardo;
+  font-family: Cardo, sans-serif;
 }
 .App {
   text-align: center;
@@ -21,9 +19,9 @@
 }
 .header {
   background-color: #d49726;
-  font-size: 1.2rem;
-  font-weight: 400;
-  padding: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 1.8rem;
   color: white;
 }
 div {
@@ -33,7 +31,7 @@ img {
   box-shadow: 10px 12px 29px -14px rgba(0,0,0,.75);
 }
 .h2 {
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   margin: 0;
 }
 a {
@@ -61,6 +59,7 @@ a {
 .meal_name {
   color: #d49726;
   font-size: 2.75rem;
+  font-weight: 700;
   text-decoration: none;
   margin: 1rem auto;
   cursor: pointer;
@@ -84,17 +83,28 @@ a {
   line-height: 1.5rem;
   margin: 0 auto 0 2rem;
 }
+.meal_ingredient-item {
+  font-family: Raleway;
+}
+.meal_measure-item {
+  font-weight: 700;
+}
+.meal_details > pre {
+  font-family: Raleway;
+  white-space: normal;
+  text-align: left;
+  margin-left: 1rem;
+}
 .meal_youtube {
   display: flex;
   background-color: red;
   color: #fff;
+  font-family: Raleway;
+  font-weight: 700;
   border-radius: 0.5rem;
-  width: 8.5rem;
-  margin: 3.5rem;
+  width: 10.9rem;
+  margin: 3.5rem 1rem;
   padding: 1rem;
-}
-.meal_details > pre {
-  white-space: normal;
 }
 
 
@@ -109,6 +119,7 @@ a {
 .search-block input {
   background-color: #dcdcdc;
   border-radius: 0.2rem 0 0 0.2rem;
+  font-family: Raleway;
   border: none;
   outline: none;
   height: 100%;
@@ -118,7 +129,9 @@ a {
 .search-block button {
   right: 0;
   border-radius: 0 0.2rem 0.2rem 0;
-  background: #d49726;
+  background-color: #d49726;
+  font-family: Raleway;
+  font-weight: 550;
   color: white;
   border: none;
   height: 100%;
@@ -130,6 +143,17 @@ a {
   align-items: center;
   margin-top: 2.6rem;
 }
+.search-item > img {
+  box-shadow: none;
+}
 .search-item_title {
   margin-left: 1rem;
+}
+.search-item_title > h3,
+  .search-item_info{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: Raleway;
+  margin: auto;
 }
